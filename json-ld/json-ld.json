@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/workflows/docs/reference/rest/v1/",
+    "Workflow": "gcp:projects.locations.workflows",
+    "Execution": "gcp:projects.locations.workflows.executions",
+    "name": "schema:name",
+    "description": "schema:description",
+    "state": "schema:status",
+    "sourceContents": "schema:text",
+    "serviceAccount": "schema:identifier",
+    "revisionId": "schema:version",
+    "createTime": "schema:dateCreated",
+    "updateTime": "schema:dateModified",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "argument": "schema:input",
+    "result": "schema:result"
+  }
+}

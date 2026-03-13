@@ -1,0 +1,383 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Workflows API
+  description: >-
+    The Workflows API enables serverless workflow orchestration. It allows you to
+    create, manage, and execute workflows that combine Google Cloud services and
+    HTTP-based APIs.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/workflows/docs
+servers:
+  - url: https://workflows.googleapis.com
+paths:
+  /v1/projects/{project}/locations/{location}/workflows:
+    get:
+      operationId: listWorkflows
+      summary: List workflows
+      description: Lists workflows in a project and location.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListWorkflowsResponse'
+    post:
+      operationId: createWorkflow
+      summary: Create a workflow
+      description: Creates a new workflow definition.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflowId
+          in: query
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workflow'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /v1/projects/{project}/locations/{location}/workflows/{workflow}:
+    get:
+      operationId: getWorkflow
+      summary: Get a workflow
+      description: Gets a workflow definition.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflow'
+    patch:
+      operationId: updateWorkflow
+      summary: Update a workflow
+      description: Updates an existing workflow definition.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workflow'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteWorkflow
+      summary: Delete a workflow
+      description: Deletes a workflow and all associated executions.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions:
+    get:
+      operationId: listExecutions
+      summary: List executions
+      description: Lists executions for a workflow.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListExecutionsResponse'
+    post:
+      operationId: createExecution
+      summary: Create an execution
+      description: Creates and starts a new execution for a workflow.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Execution'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Execution'
+  /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:
+    get:
+      operationId: getExecution
+      summary: Get an execution
+      description: Gets a workflow execution.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: execution
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Execution'
+  /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:cancel:
+    post:
+      operationId: cancelExecution
+      summary: Cancel an execution
+      description: Cancels a running workflow execution.
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: workflow
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: execution
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Execution'
+components:
+  schemas:
+    Workflow:
+      type: object
+      properties:
+        name:
+          type: string
+          description: >-
+            The workflow name in the format
+            projects/{project}/locations/{location}/workflows/{workflow}.
+        description:
+          type: string
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - ACTIVE
+        revisionId:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        sourceContents:
+          type: string
+          description: Workflow source code in YAML or JSON format.
+        serviceAccount:
+          type: string
+    Execution:
+      type: object
+      properties:
+        name:
+          type: string
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - ACTIVE
+            - SUCCEEDED
+            - FAILED
+            - CANCELLED
+        argument:
+          type: string
+          description: Input argument for the execution as a JSON string.
+        result:
+          type: string
+          description: Output of the execution as a JSON string.
+        error:
+          $ref: '#/components/schemas/Error'
+        workflowRevisionId:
+          type: string
+    Error:
+      type: object
+      properties:
+        payload:
+          type: string
+        context:
+          type: string
+        stackTrace:
+          type: object
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        response:
+          type: object
+        error:
+          type: object
+    ListWorkflowsResponse:
+      type: object
+      properties:
+        workflows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        nextPageToken:
+          type: string
+    ListExecutionsResponse:
+      type: object
+      properties:
+        executions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Execution'
+        nextPageToken:
+          type: string

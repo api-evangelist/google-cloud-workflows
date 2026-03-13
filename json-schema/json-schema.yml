@@ -1,0 +1,80 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-cloud-workflows/refs/heads/main/json-schema/json-schema.yml
+title: Google Cloud Workflows Schema
+description: JSON Schema for Google Cloud Workflows API resources.
+type: object
+$defs:
+  Workflow:
+    type: object
+    title: Workflow
+    description: A Cloud Workflows workflow definition.
+    properties:
+      name:
+        type: string
+        description: >-
+          The workflow name in the format
+          projects/{project}/locations/{location}/workflows/{workflow}.
+      description:
+        type: string
+        description: A human-readable description of the workflow.
+      state:
+        type: string
+        description: The current state of the workflow.
+        enum:
+          - STATE_UNSPECIFIED
+          - ACTIVE
+      revisionId:
+        type: string
+        description: The revision identifier of the workflow.
+      createTime:
+        type: string
+        format: date-time
+        description: The time when the workflow was created.
+      updateTime:
+        type: string
+        format: date-time
+        description: The time when the workflow was last updated.
+      sourceContents:
+        type: string
+        description: Workflow source code in YAML or JSON format.
+      serviceAccount:
+        type: string
+        description: The service account used to execute workflow steps.
+    required:
+      - name
+  Execution:
+    type: object
+    title: Execution
+    description: A workflow execution instance.
+    properties:
+      name:
+        type: string
+        description: The execution resource name.
+      startTime:
+        type: string
+        format: date-time
+        description: The time when the execution started.
+      endTime:
+        type: string
+        format: date-time
+        description: The time when the execution completed.
+      state:
+        type: string
+        description: The current state of the execution.
+        enum:
+          - STATE_UNSPECIFIED
+          - ACTIVE
+          - SUCCEEDED
+          - FAILED
+          - CANCELLED
+      argument:
+        type: string
+        description: Input argument for the execution as a JSON string.
+      result:
+        type: string
+        description: Output result of the execution as a JSON string.
+      workflowRevisionId:
+        type: string
+        description: The revision of the workflow used for this execution.
+    required:
+      - name
