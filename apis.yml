@@ -1,3 +1,4 @@
+aid: google-cloud-workflows
 name: Google Cloud Workflows
 description: >-
   Google Cloud Workflows is a serverless orchestration service that lets you
@@ -9,8 +10,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-workflows/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Workflows
   - Orchestration
@@ -27,20 +29,40 @@ apis:
       automatically.
     humanURL: https://cloud.google.com/workflows/docs
     baseURL: https://workflows.googleapis.com
-    properties:
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
     tags:
       - Workflows
       - Orchestration
       - Serverless
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/workflows/docs/reference/rest
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/docs/authentication
+      - type: Getting Started
+        url: https://cloud.google.com/workflows/docs/quickstarts
+      - type: JSONSchema
+        url: json-schema/json-schema.yml
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://cloud.google.com/workflows
+  - type: Getting Started
     url: https://cloud.google.com/workflows/docs/quickstarts
+  - type: Documentation
+    url: https://cloud.google.com/workflows/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/workflows/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/workflows/docs/support
   - type: JSONLD
     url: json-ld/json-ld.json
 maintainers:
