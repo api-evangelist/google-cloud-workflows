@@ -35,6 +35,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListWorkflowsResponse'
+      tags:
+        - Projects
     post:
       operationId: createWorkflow
       summary: Google Cloud Workflows Create a workflow
@@ -67,6 +69,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Projects
   /v1/projects/{project}/locations/{location}/workflows/{workflow}:
     get:
       operationId: getWorkflow
@@ -95,6 +99,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Workflow'
+      tags:
+        - Projects
     patch:
       operationId: updateWorkflow
       summary: Google Cloud Workflows Update a workflow
@@ -128,6 +134,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Projects
     delete:
       operationId: deleteWorkflow
       summary: Google Cloud Workflows Delete a workflow
@@ -155,6 +163,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Projects
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions:
     get:
       operationId: listExecutions
@@ -183,6 +193,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListExecutionsResponse'
+      tags:
+        - Projects
     post:
       operationId: createExecution
       summary: Google Cloud Workflows Create an execution
@@ -216,6 +228,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Execution'
+      tags:
+        - Projects
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:
     get:
       operationId: getExecution
@@ -249,6 +263,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Execution'
+      tags:
+        - Projects
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:cancel:
     post:
       operationId: cancelExecution
@@ -282,6 +298,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Execution'
+      tags:
+        - Projects
 components:
   schemas:
     Workflow:
@@ -381,3 +399,5 @@ components:
             $ref: '#/components/schemas/Execution'
         nextPageToken:
           type: string
+tags:
+  - name: Projects
