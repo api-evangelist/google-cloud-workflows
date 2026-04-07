@@ -15,7 +15,7 @@ paths:
   /v1/projects/{project}/locations/{location}/workflows:
     get:
       operationId: listWorkflows
-      summary: List workflows
+      summary: Google Cloud Workflows List workflows
       description: Lists workflows in a project and location.
       parameters:
         - name: project
@@ -37,7 +37,7 @@ paths:
                 $ref: '#/components/schemas/ListWorkflowsResponse'
     post:
       operationId: createWorkflow
-      summary: Create a workflow
+      summary: Google Cloud Workflows Create a workflow
       description: Creates a new workflow definition.
       parameters:
         - name: project
@@ -70,7 +70,7 @@ paths:
   /v1/projects/{project}/locations/{location}/workflows/{workflow}:
     get:
       operationId: getWorkflow
-      summary: Get a workflow
+      summary: Google Cloud Workflows Get a workflow
       description: Gets a workflow definition.
       parameters:
         - name: project
@@ -97,7 +97,7 @@ paths:
                 $ref: '#/components/schemas/Workflow'
     patch:
       operationId: updateWorkflow
-      summary: Update a workflow
+      summary: Google Cloud Workflows Update a workflow
       description: Updates an existing workflow definition.
       parameters:
         - name: project
@@ -130,7 +130,7 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteWorkflow
-      summary: Delete a workflow
+      summary: Google Cloud Workflows Delete a workflow
       description: Deletes a workflow and all associated executions.
       parameters:
         - name: project
@@ -158,7 +158,7 @@ paths:
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions:
     get:
       operationId: listExecutions
-      summary: List executions
+      summary: Google Cloud Workflows List executions
       description: Lists executions for a workflow.
       parameters:
         - name: project
@@ -185,7 +185,7 @@ paths:
                 $ref: '#/components/schemas/ListExecutionsResponse'
     post:
       operationId: createExecution
-      summary: Create an execution
+      summary: Google Cloud Workflows Create an execution
       description: Creates and starts a new execution for a workflow.
       parameters:
         - name: project
@@ -219,7 +219,7 @@ paths:
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:
     get:
       operationId: getExecution
-      summary: Get an execution
+      summary: Google Cloud Workflows Get an execution
       description: Gets a workflow execution.
       parameters:
         - name: project
@@ -252,7 +252,7 @@ paths:
   /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:cancel:
     post:
       operationId: cancelExecution
-      summary: Cancel an execution
+      summary: Google Cloud Workflows Cancel an execution
       description: Cancels a running workflow execution.
       parameters:
         - name: project
