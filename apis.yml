@@ -65,6 +65,10 @@ common:
     url: https://cloud.google.com/workflows/docs/support
   - type: JSONLD
     url: json-ld/json-ld.json
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
