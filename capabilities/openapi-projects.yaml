@@ -1,21 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Google Cloud Workflows API
-  description: The Workflows API enables serverless workflow orchestration. It allows you to create, manage, and execute workflows
-    that combine Google Cloud services and HTTP-based APIs.
+  label: Google Cloud Workflows API — Projects
+  description: 'Google Cloud Workflows API — Projects. 9 operations. Lead operation: Google Cloud Workflows List workflows.
+    Self-contained Naftiko capability covering one Google Cloud Workflows business surface.'
   tags:
-  - Google
-  - Cloud
-  - Workflows
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Google Cloud Workflows
+  - Projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_WORKFLOWS_API_KEY: GOOGLE_CLOUD_WORKFLOWS_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: google-cloud-workflows
+    namespace: openapi-projects
     baseUri: https://workflows.googleapis.com
-    description: Google Cloud Workflows API HTTP API.
+    description: Google Cloud Workflows API — Projects business capability. Self-contained, no shared references.
     resources:
     - name: v1-projects-project-locations-location-workflows
       path: /v1/projects/{project}/locations/{location}/workflows
@@ -23,6 +25,11 @@ capability:
       - name: listworkflows
         method: GET
         description: Google Cloud Workflows List workflows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -32,14 +39,14 @@ capability:
           in: path
           type: string
           required: true
+      - name: createworkflow
+        method: POST
+        description: Google Cloud Workflows Create a workflow
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-      - name: createworkflow
-        method: POST
-        description: Google Cloud Workflows Create a workflow
         inputParameters:
         - name: project
           in: path
@@ -52,17 +59,22 @@ capability:
         - name: workflowId
           in: query
           type: string
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+        - name: body
+          in: body
           type: object
-          value: $.
-    - name: v1-projects-project-locations-location-workflows
+          description: Request body (JSON).
+          required: true
+    - name: v1-projects-project-locations-location-workflows-workflow
       path: /v1/projects/{project}/locations/{location}/workflows/{workflow}
       operations:
       - name: getworkflow
         method: GET
         description: Google Cloud Workflows Get a workflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -76,14 +88,14 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
       - name: updateworkflow
         method: PATCH
         description: Google Cloud Workflows Update a workflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -97,14 +109,19 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+        - name: body
+          in: body
           type: object
-          value: $.
+          description: Request body (JSON).
+          required: true
       - name: deleteworkflow
         method: DELETE
         description: Google Cloud Workflows Delete a workflow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -118,17 +135,17 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: v1-projects-project-locations-location-workflows
+    - name: v1-projects-project-locations-location-workflows-workflow-executions
       path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions
       operations:
       - name: listexecutions
         method: GET
         description: Google Cloud Workflows List executions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -142,14 +159,14 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
       - name: createexecution
         method: POST
         description: Google Cloud Workflows Create an execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -163,17 +180,22 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+        - name: body
+          in: body
           type: object
-          value: $.
-    - name: v1-projects-project-locations-location-workflows
+          description: Request body (JSON).
+          required: true
+    - name: v1-projects-project-locations-location-workflows-workflow-executions-execution
       path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
       operations:
       - name: getexecution
         method: GET
         description: Google Cloud Workflows Get an execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -191,17 +213,17 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: v1-projects-project-locations-location-workflows
+    - name: 'v1-projects-project-locations-location-workflows-workflow-executions-execution}:'
       path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:cancel
       operations:
       - name: cancelexecution
         method: POST
         description: Google Cloud Workflows Cancel an execution
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -219,50 +241,47 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
   exposes:
   - type: rest
+    namespace: openapi-projects-rest
     port: 8080
-    namespace: google-cloud-workflows-rest
-    description: REST adapter for Google Cloud Workflows API.
+    description: REST adapter for Google Cloud Workflows API — Projects. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
     resources:
-    - path: /v1/projects/{project}/locations/{location}/workflows
-      name: listworkflows
+    - path: /v1/v1/projects/{project}/locations/{location}/workflows
+      name: v1-projects-project-locations-location-workflows
+      description: REST surface for v1-projects-project-locations-location-workflows.
       operations:
       - method: GET
         name: listworkflows
         description: Google Cloud Workflows List workflows
-        call: google-cloud-workflows.listworkflows
+        call: openapi-projects.listworkflows
         with:
           project: rest.project
           location: rest.location
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows
-      name: createworkflow
-      operations:
       - method: POST
         name: createworkflow
         description: Google Cloud Workflows Create a workflow
-        call: google-cloud-workflows.createworkflow
+        call: openapi-projects.createworkflow
         with:
           project: rest.project
           location: rest.location
+          workflowId: rest.workflowId
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}
-      name: getworkflow
+    - path: /v1/v1/projects/{project}/locations/{location}/workflows/{workflow}
+      name: v1-projects-project-locations-location-workflows-workflow
+      description: REST surface for v1-projects-project-locations-location-workflows-workflow.
       operations:
       - method: GET
         name: getworkflow
         description: Google Cloud Workflows Get a workflow
-        call: google-cloud-workflows.getworkflow
+        call: openapi-projects.getworkflow
         with:
           project: rest.project
           location: rest.location
@@ -270,27 +289,22 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}
-      name: updateworkflow
-      operations:
       - method: PATCH
         name: updateworkflow
         description: Google Cloud Workflows Update a workflow
-        call: google-cloud-workflows.updateworkflow
+        call: openapi-projects.updateworkflow
         with:
           project: rest.project
           location: rest.location
           workflow: rest.workflow
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}
-      name: deleteworkflow
-      operations:
       - method: DELETE
         name: deleteworkflow
         description: Google Cloud Workflows Delete a workflow
-        call: google-cloud-workflows.deleteworkflow
+        call: openapi-projects.deleteworkflow
         with:
           project: rest.project
           location: rest.location
@@ -298,13 +312,14 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions
-      name: listexecutions
+    - path: /v1/v1/projects/{project}/locations/{location}/workflows/{workflow}/executions
+      name: v1-projects-project-locations-location-workflows-workflow-executions
+      description: REST surface for v1-projects-project-locations-location-workflows-workflow-executions.
       operations:
       - method: GET
         name: listexecutions
         description: Google Cloud Workflows List executions
-        call: google-cloud-workflows.listexecutions
+        call: openapi-projects.listexecutions
         with:
           project: rest.project
           location: rest.location
@@ -312,27 +327,26 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions
-      name: createexecution
-      operations:
       - method: POST
         name: createexecution
         description: Google Cloud Workflows Create an execution
-        call: google-cloud-workflows.createexecution
+        call: openapi-projects.createexecution
         with:
           project: rest.project
           location: rest.location
           workflow: rest.workflow
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
-      name: getexecution
+    - path: /v1/v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
+      name: v1-projects-project-locations-location-workflows-workflow-executions-execution
+      description: REST surface for v1-projects-project-locations-location-workflows-workflow-executions-execution.
       operations:
       - method: GET
         name: getexecution
         description: Google Cloud Workflows Get an execution
-        call: google-cloud-workflows.getexecution
+        call: openapi-projects.getexecution
         with:
           project: rest.project
           location: rest.location
@@ -341,13 +355,14 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}:cancel
-      name: cancelexecution
+    - path: /v1/v1/projects/{project}/locations/{location}/workflows/{workflow}/executions/execution-cancel
+      name: v1-projects-project-locations-location-workflows-workflow-executions-execution
+      description: REST surface for v1-projects-project-locations-location-workflows-workflow-executions-execution}:.
       operations:
       - method: POST
         name: cancelexecution
         description: Google Cloud Workflows Cancel an execution
-        call: google-cloud-workflows.cancelexecution
+        call: openapi-projects.cancelexecution
         with:
           project: rest.project
           location: rest.location
@@ -357,255 +372,139 @@ capability:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: openapi-projects-mcp
     port: 9090
-    namespace: google-cloud-workflows-mcp
     transport: http
-    description: MCP adapter for Google Cloud Workflows API for AI agent use.
+    description: MCP adapter for Google Cloud Workflows API — Projects. One tool per consumed operation, routed inline through
+      this capability's consumes block.
     tools:
-    - name: listworkflows
+    - name: google-cloud-workflows-list-workflows
       description: Google Cloud Workflows List workflows
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-workflows.listworkflows
+      call: openapi-projects.listworkflows
       with:
         project: tools.project
         location: tools.location
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: createworkflow
+    - name: google-cloud-workflows-create-workflow
       description: Google Cloud Workflows Create a workflow
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-workflows.createworkflow
+      call: openapi-projects.createworkflow
       with:
         project: tools.project
         location: tools.location
         workflowId: tools.workflowId
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflowId
-        type: string
-        description: workflowId
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getworkflow
+    - name: google-cloud-workflows-get-workflow
       description: Google Cloud Workflows Get a workflow
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-workflows.getworkflow
+      call: openapi-projects.getworkflow
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: updateworkflow
+    - name: google-cloud-workflows-update-workflow
       description: Google Cloud Workflows Update a workflow
       hints:
         readOnly: false
         destructive: false
-        idempotent: false
-      call: google-cloud-workflows.updateworkflow
+        idempotent: true
+      call: openapi-projects.updateworkflow
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: deleteworkflow
+    - name: google-cloud-workflows-delete-workflow
       description: Google Cloud Workflows Delete a workflow
       hints:
         readOnly: false
         destructive: true
         idempotent: true
-      call: google-cloud-workflows.deleteworkflow
+      call: openapi-projects.deleteworkflow
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: listexecutions
+    - name: google-cloud-workflows-list-executions
       description: Google Cloud Workflows List executions
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-workflows.listexecutions
+      call: openapi-projects.listexecutions
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: createexecution
+    - name: google-cloud-workflows-create-execution
       description: Google Cloud Workflows Create an execution
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-workflows.createexecution
+      call: openapi-projects.createexecution
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getexecution
+    - name: google-cloud-workflows-get-execution
       description: Google Cloud Workflows Get an execution
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-workflows.getexecution
+      call: openapi-projects.getexecution
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
         execution: tools.execution
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
-      - name: execution
-        type: string
-        description: execution
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: cancelexecution
+    - name: google-cloud-workflows-cancel-execution
       description: Google Cloud Workflows Cancel an execution
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-workflows.cancelexecution
+      call: openapi-projects.cancelexecution
       with:
         project: tools.project
         location: tools.location
         workflow: tools.workflow
         execution: tools.execution
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: workflow
-        type: string
-        description: workflow
-        required: true
-      - name: execution
-        type: string
-        description: execution
-        required: true
       outputParameters:
       - type: object
         mapping: $.
