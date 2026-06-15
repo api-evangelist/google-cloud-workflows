@@ -1,0 +1,287 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Workflows API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Workflows List workflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists workflows in a project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Create a workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new workflow definition."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Get a workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a workflow definition."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Update a workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing workflow definition."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Delete a workflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a workflow and all associated executions."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows List executions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists executions for a workflow."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Create an execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates and starts a new execution for a workflow."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Get an execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow/executions/:execution",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "execution",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a workflow execution."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Workflows Cancel an execution",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://workflows.googleapis.com/v1/projects/:project/locations/:location/workflows/:workflow/executions/:execution:cancel",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workflow",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "execution",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancels a running workflow execution."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
