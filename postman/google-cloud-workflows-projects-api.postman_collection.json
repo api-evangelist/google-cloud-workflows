@@ -1,0 +1,1208 @@
+{
+  "info": {
+    "_postman_id": "f4a908e2-a5e5-4a38-bdf1-57b8a88812ed",
+    "name": "Google Cloud Workflows Projects API",
+    "description": "The Workflows API enables serverless workflow orchestration. It allows you to create, manage, and execute workflows that combine Google Cloud services and HTTP-based APIs.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:55.000Z",
+    "updatedAt": "2026-07-28T01:48:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f4a908e2-a5e5-4a38-bdf1-57b8a88812ed"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "projects",
+          "item": [
+            {
+              "name": "{project}",
+              "item": [
+                {
+                  "name": "locations",
+                  "item": [
+                    {
+                      "name": "{location}",
+                      "item": [
+                        {
+                          "name": "workflows",
+                          "item": [
+                            {
+                              "name": "{workflow}",
+                              "item": [
+                                {
+                                  "name": "executions",
+                                  "item": [
+                                    {
+                                      "name": "{execution}",
+                                      "item": [
+                                        {
+                                          "name": "Google Cloud Workflows Get an execution",
+                                          "id": "4d9488d7-458e-437c-b5b0-a5042aff9981",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions/:execution",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "v1",
+                                                "projects",
+                                                ":project",
+                                                "locations",
+                                                ":location",
+                                                "workflows",
+                                                ":workflow",
+                                                "executions",
+                                                ":execution"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "7cb0cbae-8caa-4e2d-b399-20247c2af523",
+                                                  "key": "project",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "d72ae6fa-687d-426b-afd6-57772186ac78",
+                                                  "key": "location",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "bc7458a6-b83b-4925-a55f-cc057e943771",
+                                                  "key": "workflow",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "4fae7d15-3d3c-4157-b95e-0133bf990802",
+                                                  "key": "execution",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets a workflow execution."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "bdccf6ad-671e-49c7-b0b4-bfed15dc9ff8",
+                                              "name": "Successful response",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions/:execution",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "v1",
+                                                    "projects",
+                                                    ":project",
+                                                    "locations",
+                                                    ":location",
+                                                    "workflows",
+                                                    ":workflow",
+                                                    "executions",
+                                                    ":execution"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "project"
+                                                    },
+                                                    {
+                                                      "key": "location"
+                                                    },
+                                                    {
+                                                      "key": "workflow"
+                                                    },
+                                                    {
+                                                      "key": "execution"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"name\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"argument\": \"<string>\",\n  \"result\": \"<string>\",\n  \"error\": {\n    \"payload\": \"<string>\",\n    \"context\": \"<string>\",\n    \"stackTrace\": {}\n  },\n  \"workflowRevisionId\": \"<string>\"\n}",
+                                              "createdAt": "2026-07-28T01:48:55.000Z",
+                                              "updatedAt": "2026-07-28T01:48:55.000Z",
+                                              "uid": "35240-bdccf6ad-671e-49c7-b0b4-bfed15dc9ff8"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T01:48:55.000Z",
+                                          "updatedAt": "2026-07-28T01:48:55.000Z",
+                                          "uid": "35240-4d9488d7-458e-437c-b5b0-a5042aff9981"
+                                        }
+                                      ],
+                                      "id": "180270c8-b01a-46a3-bb3e-97b6ec4381a4",
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-180270c8-b01a-46a3-bb3e-97b6ec4381a4"
+                                    },
+                                    {
+                                      "name": "{execution}:cancel",
+                                      "item": [
+                                        {
+                                          "name": "Google Cloud Workflows Cancel an execution",
+                                          "id": "834d6296-a150-4f64-9662-85a0df7d79e2",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions/{{execution}}:cancel",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "v1",
+                                                "projects",
+                                                ":project",
+                                                "locations",
+                                                ":location",
+                                                "workflows",
+                                                ":workflow",
+                                                "executions",
+                                                "{{execution}}:cancel"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "af0c2a39-4e41-48f7-aa05-e3b6351d9603",
+                                                  "key": "project",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "f32f6983-3c66-4154-b510-26a163a6fb1d",
+                                                  "key": "location",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "0faf38cb-68ce-4a75-bf27-b133b1d6dad1",
+                                                  "key": "workflow",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Cancels a running workflow execution."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "8143e04e-f615-48bd-872d-cfdc0c373f13",
+                                              "name": "Successful response",
+                                              "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions/{{execution}}:cancel",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "v1",
+                                                    "projects",
+                                                    ":project",
+                                                    "locations",
+                                                    ":location",
+                                                    "workflows",
+                                                    ":workflow",
+                                                    "executions",
+                                                    "{{execution}}:cancel"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "project"
+                                                    },
+                                                    {
+                                                      "key": "location"
+                                                    },
+                                                    {
+                                                      "key": "workflow"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"name\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"argument\": \"<string>\",\n  \"result\": \"<string>\",\n  \"error\": {\n    \"payload\": \"<string>\",\n    \"context\": \"<string>\",\n    \"stackTrace\": {}\n  },\n  \"workflowRevisionId\": \"<string>\"\n}",
+                                              "createdAt": "2026-07-28T01:48:55.000Z",
+                                              "updatedAt": "2026-07-28T01:48:55.000Z",
+                                              "uid": "35240-8143e04e-f615-48bd-872d-cfdc0c373f13"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T01:48:55.000Z",
+                                          "updatedAt": "2026-07-28T01:48:55.000Z",
+                                          "uid": "35240-834d6296-a150-4f64-9662-85a0df7d79e2"
+                                        }
+                                      ],
+                                      "id": "62480a39-3bff-4be5-9198-b5f1145fb5bc",
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-62480a39-3bff-4be5-9198-b5f1145fb5bc"
+                                    },
+                                    {
+                                      "name": "Google Cloud Workflows List executions",
+                                      "id": "aa4b50b7-4985-4283-bcae-f460490e5d06",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "v1",
+                                            "projects",
+                                            ":project",
+                                            "locations",
+                                            ":location",
+                                            "workflows",
+                                            ":workflow",
+                                            "executions"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "937cc075-c095-4f6b-93ea-439f031c1b05",
+                                              "key": "project",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "fb20c8ec-8700-4db2-a588-c70eeaf4adae",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "49a31a73-da1a-424d-b79e-787af4564f0f",
+                                              "key": "workflow",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Lists executions for a workflow."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "a2d2a368-59ae-4d71-bc82-eaeaa3510f96",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "v1",
+                                                "projects",
+                                                ":project",
+                                                "locations",
+                                                ":location",
+                                                "workflows",
+                                                ":workflow",
+                                                "executions"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "project"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "workflow"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"executions\": [\n    {\n      \"name\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\",\n      \"state\": \"CANCELLED\",\n      \"argument\": \"<string>\",\n      \"result\": \"<string>\",\n      \"error\": {\n        \"payload\": \"<string>\",\n        \"context\": \"<string>\",\n        \"stackTrace\": {}\n      },\n      \"workflowRevisionId\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"startTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\",\n      \"state\": \"CANCELLED\",\n      \"argument\": \"<string>\",\n      \"result\": \"<string>\",\n      \"error\": {\n        \"payload\": \"<string>\",\n        \"context\": \"<string>\",\n        \"stackTrace\": {}\n      },\n      \"workflowRevisionId\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:48:55.000Z",
+                                          "updatedAt": "2026-07-28T01:48:55.000Z",
+                                          "uid": "35240-a2d2a368-59ae-4d71-bc82-eaeaa3510f96"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-aa4b50b7-4985-4283-bcae-f460490e5d06"
+                                    },
+                                    {
+                                      "name": "Google Cloud Workflows Create an execution",
+                                      "id": "51a1380a-05d9-4fda-9568-a547afe3f672",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"argument\": \"<string>\",\n  \"result\": \"<string>\",\n  \"error\": {\n    \"payload\": \"<string>\",\n    \"context\": \"<string>\",\n    \"stackTrace\": {}\n  },\n  \"workflowRevisionId\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "v1",
+                                            "projects",
+                                            ":project",
+                                            "locations",
+                                            ":location",
+                                            "workflows",
+                                            ":workflow",
+                                            "executions"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "6d2fce18-acfb-4ba1-bcd0-bd552d461dba",
+                                              "key": "project",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "f1248367-082f-4eec-ad25-56911bf1bb1d",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "0b4773af-cb8b-4f90-8b78-63fed4e3c5d0",
+                                              "key": "workflow",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Creates and starts a new execution for a workflow."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "1017f750-9a75-44fa-91b1-d97b395bbef2",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"name\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"argument\": \"<string>\",\n  \"result\": \"<string>\",\n  \"error\": {\n    \"payload\": \"<string>\",\n    \"context\": \"<string>\",\n    \"stackTrace\": {}\n  },\n  \"workflowRevisionId\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow/executions",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "v1",
+                                                "projects",
+                                                ":project",
+                                                "locations",
+                                                ":location",
+                                                "workflows",
+                                                ":workflow",
+                                                "executions"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "project"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "workflow"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"argument\": \"<string>\",\n  \"result\": \"<string>\",\n  \"error\": {\n    \"payload\": \"<string>\",\n    \"context\": \"<string>\",\n    \"stackTrace\": {}\n  },\n  \"workflowRevisionId\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:48:55.000Z",
+                                          "updatedAt": "2026-07-28T01:48:55.000Z",
+                                          "uid": "35240-1017f750-9a75-44fa-91b1-d97b395bbef2"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-51a1380a-05d9-4fda-9568-a547afe3f672"
+                                    }
+                                  ],
+                                  "id": "4c82b3c7-a699-4cd4-a2df-5e92d7d17154",
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-4c82b3c7-a699-4cd4-a2df-5e92d7d17154"
+                                },
+                                {
+                                  "name": "Google Cloud Workflows Get a workflow",
+                                  "id": "438f1beb-b37c-4540-aeba-d5051c343f13",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "workflows",
+                                        ":workflow"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "10caef21-9401-4315-89a0-d361701cca4b",
+                                          "key": "project",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "e94d2e1a-5ec7-4890-acb0-52ea59d7859f",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "7352bda3-c450-407d-ab3d-97d9990a02d3",
+                                          "key": "workflow",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Gets a workflow definition."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "6b232096-e502-4759-8625-48e03039ed93",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "v1",
+                                            "projects",
+                                            ":project",
+                                            "locations",
+                                            ":location",
+                                            "workflows",
+                                            ":workflow"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "project"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "workflow"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"revisionId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"sourceContents\": \"<string>\",\n  \"serviceAccount\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-6b232096-e502-4759-8625-48e03039ed93"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-438f1beb-b37c-4540-aeba-d5051c343f13"
+                                },
+                                {
+                                  "name": "Google Cloud Workflows Update a workflow",
+                                  "id": "9030c3c6-878b-4b78-910a-abfa937e8dd1",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"revisionId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"sourceContents\": \"<string>\",\n  \"serviceAccount\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "workflows",
+                                        ":workflow"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "246dd11e-2b96-45c3-92f6-fd85f1336a80",
+                                          "key": "project",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "7bb80321-05b0-4bef-b1d5-87247e9393f8",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "b218bb13-69a8-41d3-b1a0-9f250444aa25",
+                                          "key": "workflow",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Updates an existing workflow definition."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "18f6be5e-9fc6-435a-9bfe-f4a3b4a4d5db",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "PATCH",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"revisionId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"sourceContents\": \"<string>\",\n  \"serviceAccount\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "v1",
+                                            "projects",
+                                            ":project",
+                                            "locations",
+                                            ":location",
+                                            "workflows",
+                                            ":workflow"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "project"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "workflow"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"response\": {},\n  \"error\": {}\n}",
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-18f6be5e-9fc6-435a-9bfe-f4a3b4a4d5db"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-9030c3c6-878b-4b78-910a-abfa937e8dd1"
+                                },
+                                {
+                                  "name": "Google Cloud Workflows Delete a workflow",
+                                  "id": "1d94862d-0919-4860-8be3-ef2ab1a3bd8d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "workflows",
+                                        ":workflow"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "dc56677b-c744-4723-88e9-5904766e71be",
+                                          "key": "project",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "0336363d-5983-4ffe-b0bc-13d790605c5f",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "9d404dd3-c4b6-4eb0-8e1b-0041f40d7cac",
+                                          "key": "workflow",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Deletes a workflow and all associated executions."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "8a905f52-e29b-4f1c-a533-bf79807f9beb",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows/:workflow",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "v1",
+                                            "projects",
+                                            ":project",
+                                            "locations",
+                                            ":location",
+                                            "workflows",
+                                            ":workflow"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "project"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "workflow"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"response\": {},\n  \"error\": {}\n}",
+                                      "createdAt": "2026-07-28T01:48:55.000Z",
+                                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                                      "uid": "35240-8a905f52-e29b-4f1c-a533-bf79807f9beb"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-1d94862d-0919-4860-8be3-ef2ab1a3bd8d"
+                                }
+                              ],
+                              "id": "8cbde1c6-0ee3-4038-8c6e-d6b767957813",
+                              "createdAt": "2026-07-28T01:48:55.000Z",
+                              "updatedAt": "2026-07-28T01:48:55.000Z",
+                              "uid": "35240-8cbde1c6-0ee3-4038-8c6e-d6b767957813"
+                            },
+                            {
+                              "name": "Google Cloud Workflows List workflows",
+                              "id": "937c4ce1-2285-41bb-a853-4a0c42ffe038",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "workflows"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "64ab97fe-da7e-43f4-b3da-3410ccd45f9c",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "644dcc76-1bde-4066-8549-da78788471ac",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Lists workflows in a project and location."
+                              },
+                              "response": [
+                                {
+                                  "id": "9cc6af86-01f9-4363-94bd-0270d95e4994",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "workflows"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"workflows\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"state\": \"ACTIVE\",\n      \"revisionId\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"sourceContents\": \"<string>\",\n      \"serviceAccount\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"state\": \"ACTIVE\",\n      \"revisionId\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"sourceContents\": \"<string>\",\n      \"serviceAccount\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-9cc6af86-01f9-4363-94bd-0270d95e4994"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:55.000Z",
+                              "updatedAt": "2026-07-28T01:48:55.000Z",
+                              "uid": "35240-937c4ce1-2285-41bb-a853-4a0c42ffe038"
+                            },
+                            {
+                              "name": "Google Cloud Workflows Create a workflow",
+                              "id": "5a169104-0737-4f7d-8689-cad0cc1925c2",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"revisionId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"sourceContents\": \"<string>\",\n  \"serviceAccount\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows?workflowId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "v1",
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "workflows"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "workflowId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "9e05e15b-8768-4ff5-bd4b-0d2129655b70",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "9a240049-7f1c-42e0-bfeb-f3556188b40a",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Creates a new workflow definition."
+                              },
+                              "response": [
+                                {
+                                  "id": "f67ceeab-be35-4215-83e5-ea27caa876f1",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"revisionId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"sourceContents\": \"<string>\",\n  \"serviceAccount\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/v1/projects/:project/locations/:location/workflows?workflowId=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "v1",
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "workflows"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "workflowId",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"response\": {},\n  \"error\": {}\n}",
+                                  "createdAt": "2026-07-28T01:48:55.000Z",
+                                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                                  "uid": "35240-f67ceeab-be35-4215-83e5-ea27caa876f1"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:55.000Z",
+                              "updatedAt": "2026-07-28T01:48:55.000Z",
+                              "uid": "35240-5a169104-0737-4f7d-8689-cad0cc1925c2"
+                            }
+                          ],
+                          "id": "06f62e5c-7b6c-40ec-b5d3-f92e000cde7c",
+                          "createdAt": "2026-07-28T01:48:55.000Z",
+                          "updatedAt": "2026-07-28T01:48:55.000Z",
+                          "uid": "35240-06f62e5c-7b6c-40ec-b5d3-f92e000cde7c"
+                        }
+                      ],
+                      "id": "3b8019c8-9fc0-4dd8-a2a3-688c9da8df2c",
+                      "createdAt": "2026-07-28T01:48:55.000Z",
+                      "updatedAt": "2026-07-28T01:48:55.000Z",
+                      "uid": "35240-3b8019c8-9fc0-4dd8-a2a3-688c9da8df2c"
+                    }
+                  ],
+                  "id": "0e8d9366-1975-481e-b209-a61d6fe9fa4d",
+                  "createdAt": "2026-07-28T01:48:55.000Z",
+                  "updatedAt": "2026-07-28T01:48:55.000Z",
+                  "uid": "35240-0e8d9366-1975-481e-b209-a61d6fe9fa4d"
+                }
+              ],
+              "id": "f83e0e5d-a1b0-4f10-99f0-7db5ee3927f5",
+              "createdAt": "2026-07-28T01:48:55.000Z",
+              "updatedAt": "2026-07-28T01:48:55.000Z",
+              "uid": "35240-f83e0e5d-a1b0-4f10-99f0-7db5ee3927f5"
+            }
+          ],
+          "id": "9f2131e8-5c26-4343-9850-86e0e0716b8f",
+          "createdAt": "2026-07-28T01:48:55.000Z",
+          "updatedAt": "2026-07-28T01:48:55.000Z",
+          "uid": "35240-9f2131e8-5c26-4343-9850-86e0e0716b8f"
+        }
+      ],
+      "id": "0c61a8f2-565a-4a44-8fc2-a08bd5a65a37",
+      "createdAt": "2026-07-28T01:48:55.000Z",
+      "updatedAt": "2026-07-28T01:48:55.000Z",
+      "uid": "35240-0c61a8f2-565a-4a44-8fc2-a08bd5a65a37"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://workflows.googleapis.com"
+    },
+    {
+      "key": "execution",
+      "value": "<string>"
+    }
+  ]
+}

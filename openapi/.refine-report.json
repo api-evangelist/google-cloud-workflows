@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-workflows",
+  "sources": [
+    "google-cloud-workflows-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-workflows-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
