@@ -5,6 +5,18 @@ description: >-
   flexible, automated workflows. Workflows manages the order of execution, including handling retries, waiting, and
   polling, and ensures reliable execution despite hardware and networking interruptions. It supports conditional logic,
   subworkflows, and connectors to integrate with other Google Cloud products.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
