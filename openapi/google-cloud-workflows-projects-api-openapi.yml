@@ -301,24 +301,45 @@ paths:
       - Projects
 components:
   schemas:
-    ListExecutionsResponse:
+    Operation:
       type: object
       properties:
-        executions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Execution'
-        nextPageToken:
+        name:
           type: string
-    Error:
-      type: object
-      properties:
-        payload:
-          type: string
-        context:
-          type: string
-        stackTrace:
+        done:
+          type: boolean
+        metadata:
           type: object
+        response:
+          type: object
+        error:
+          type: object
+    Workflow:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The workflow name in the format projects/{project}/locations/{location}/workflows/{workflow}.
+        description:
+          type: string
+        state:
+          type: string
+          enum:
+          - STATE_UNSPECIFIED
+          - ACTIVE
+        revisionId:
+          type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        sourceContents:
+          type: string
+          description: Workflow source code in YAML or JSON format.
+        serviceAccount:
+          type: string
     Execution:
       type: object
       properties:
@@ -348,32 +369,6 @@ components:
           $ref: '#/components/schemas/Error'
         workflowRevisionId:
           type: string
-    Workflow:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The workflow name in the format projects/{project}/locations/{location}/workflows/{workflow}.
-        description:
-          type: string
-        state:
-          type: string
-          enum:
-          - STATE_UNSPECIFIED
-          - ACTIVE
-        revisionId:
-          type: string
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-        sourceContents:
-          type: string
-          description: Workflow source code in YAML or JSON format.
-        serviceAccount:
-          type: string
     ListWorkflowsResponse:
       type: object
       properties:
@@ -383,16 +378,21 @@ components:
             $ref: '#/components/schemas/Workflow'
         nextPageToken:
           type: string
-    Operation:
+    Error:
       type: object
       properties:
-        name:
+        payload:
           type: string
-        done:
-          type: boolean
-        metadata:
+        context:
+          type: string
+        stackTrace:
           type: object
-        response:
-          type: object
-        error:
-          type: object
+    ListExecutionsResponse:
+      type: object
+      properties:
+        executions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Execution'
+        nextPageToken:
+          type: string
