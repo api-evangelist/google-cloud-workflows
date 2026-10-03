@@ -310,19 +310,6 @@ components:
             $ref: '#/components/schemas/Execution'
         nextPageToken:
           type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        response:
-          type: object
-        error:
-          type: object
     Workflow:
       type: object
       properties:
@@ -387,6 +374,19 @@ components:
           $ref: '#/components/schemas/Error'
         workflowRevisionId:
           type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        response:
+          type: object
+        error:
+          type: object
     ListWorkflowsResponse:
       type: object
       properties:
