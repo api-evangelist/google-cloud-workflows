@@ -301,15 +301,37 @@ paths:
       - Projects
 components:
   schemas:
-    ListExecutionsResponse:
+    ListWorkflowsResponse:
       type: object
       properties:
-        executions:
+        workflows:
           type: array
           items:
-            $ref: '#/components/schemas/Execution'
+            $ref: '#/components/schemas/Workflow'
         nextPageToken:
           type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        response:
+          type: object
+        error:
+          type: object
+    Error:
+      type: object
+      properties:
+        payload:
+          type: string
+        context:
+          type: string
+        stackTrace:
+          type: object
     Workflow:
       type: object
       properties:
@@ -336,15 +358,15 @@ components:
           description: Workflow source code in YAML or JSON format.
         serviceAccount:
           type: string
-    Error:
+    ListExecutionsResponse:
       type: object
       properties:
-        payload:
+        executions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Execution'
+        nextPageToken:
           type: string
-        context:
-          type: string
-        stackTrace:
-          type: object
     Execution:
       type: object
       properties:
@@ -373,26 +395,4 @@ components:
         error:
           $ref: '#/components/schemas/Error'
         workflowRevisionId:
-          type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        response:
-          type: object
-        error:
-          type: object
-    ListWorkflowsResponse:
-      type: object
-      properties:
-        workflows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        nextPageToken:
           type: string
