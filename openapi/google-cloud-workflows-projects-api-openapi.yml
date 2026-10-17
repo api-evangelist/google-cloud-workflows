@@ -301,28 +301,6 @@ paths:
       - Projects
 components:
   schemas:
-    ListWorkflowsResponse:
-      type: object
-      properties:
-        workflows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workflow'
-        nextPageToken:
-          type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        response:
-          type: object
-        error:
-          type: object
     Error:
       type: object
       properties:
@@ -358,15 +336,6 @@ components:
           description: Workflow source code in YAML or JSON format.
         serviceAccount:
           type: string
-    ListExecutionsResponse:
-      type: object
-      properties:
-        executions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Execution'
-        nextPageToken:
-          type: string
     Execution:
       type: object
       properties:
@@ -395,4 +364,35 @@ components:
         error:
           $ref: '#/components/schemas/Error'
         workflowRevisionId:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        response:
+          type: object
+        error:
+          type: object
+    ListWorkflowsResponse:
+      type: object
+      properties:
+        workflows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workflow'
+        nextPageToken:
+          type: string
+    ListExecutionsResponse:
+      type: object
+      properties:
+        executions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Execution'
+        nextPageToken:
           type: string
